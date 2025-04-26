@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "build:gh": "NUXT_APP_BASE_URL=/nuxt-dashboard/ yarn generate"
   },
   "dependencies": {
     "@nuxtjs/leaflet": "^1.2.6",

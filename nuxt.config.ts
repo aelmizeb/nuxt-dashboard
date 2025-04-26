@@ -1,14 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
+  app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || '/', // fallback to `/`
+  },
   devtools: { enabled: true },
   srcDir: 'src/',
-  ssr: true,
+  ssr: false,
   css: [
     '@/assets/css/main.css'
   ],
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/leaflet',
-  ]
+  ],
 })
