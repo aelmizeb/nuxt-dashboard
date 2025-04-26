@@ -1,8 +1,46 @@
-# Nuxt Minimal Starter
+# Nuxt Dashboard Template with Tailwind
+
+A **Nuxt 3** dashboard template styled with **Tailwind CSS** and developed with **Yarn**.
+
+## 🚀 Features
+- Multiple pages
+- Collapsible sidebar
+- Powered by [Nuxt 3](https://nuxt.com/) + [Tailwind CSS](https://tailwindcss.com/)
+
+## 🔎 Preview
+
+🚀 **[Live Demo](https://aelmizeb.github.io/nuxt-dashboard/)**
+
+
+## ✨ Quick Start
+
+Clone this project:
+
+```bash
+git clone https://github.com/aelmizeb/nuxt-dashboard.git
+cd nuxt-dashboard
+yarn install
+yarn dev
+```
+
+## 🧩 Deployment
+This project is automatically deployed on GitHub Pages at:
+👉 https://aelmizeb.github.io/nuxt-dashboard/
+
+To manually generate the static site:
+
+```bash
+yarn generate
+```
+
+Output will be in .output/public/, ready for deployment.
+
+More info on Nuxt deployment documentation.
+
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+## 🛠 Setup
 
 Make sure to install dependencies:
 
@@ -20,7 +58,7 @@ yarn install
 bun install
 ```
 
-## Development Server
+## 💻 Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -38,7 +76,7 @@ yarn dev
 bun run dev
 ```
 
-## Production
+## 📦 Production
 
 Build the application for production:
 
@@ -73,3 +111,21 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## 🤝 Contributing
+Contributions are welcome!
+If you'd like to contribute:
+
+- Fork the repository
+- Create your feature branch (git checkout -b feature/my-feature)
+- Commit your changes (git commit -m 'Add new feature')
+- Push to the branch (git push origin feature/my-feature)
+- Open a Pull Request
+
+<!--## 👨‍💻 Contributors
+
+[![Contributors](https://img.shields.io/github/contributors/aelmizeb/nuxt-dashboard?style=for-the-badge)](https://github.com/aelmizeb/nuxt-dashboard/graphs/contributors)-->
+
+
+## 🛡 License
+This project is licensed under the MIT License.
