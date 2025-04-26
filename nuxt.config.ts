@@ -4,11 +4,11 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/nuxt-dashboard/',
   },
+  ssr: false,
   devtools: { enabled: true },
   srcDir: 'src/',
-  ssr: false,
   css: [
-    '@/assets/css/main.css'
+    '@/assets/css/main.css',
   ],
   modules: [
     '@nuxtjs/tailwindcss',
