@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/', // fallback to `/`
+    baseURL: '/nuxt-dashboard/',
   },
   devtools: { enabled: true },
   srcDir: 'src/',
