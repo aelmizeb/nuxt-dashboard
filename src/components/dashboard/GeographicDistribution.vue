@@ -1,6 +1,5 @@
 <template>
-  <!-- ====== Map One Start -->
-  <div class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6">
+  <div class="rounded-md shadow-sm border border-gray-200 bg-white p-5 sm:p-6">
     <div class="flex justify-between">
       <div>
         <h3 class="text-lg font-semibold text-gray-800">
@@ -23,7 +22,7 @@
           </svg>
         </button>
         <div x-show="openDropDown" @click.outside="openDropDown = false"
-          class="absolute right-0 top-full z-40 w-40 space-y-1 rounded-2xl border border-gray-200 bg-white p-2 shadow-theme-lg"
+          class="absolute right-0 top-full z-40 w-40 space-y-1 rounded-md shadow-sm border border-gray-200 bg-white p-2 shadow-theme-lg"
           style="display: none;">
           <button
             class="flex w-full rounded-lg px-3 py-2 text-left text-theme-xs font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">
@@ -36,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="border-gary-200 my-6 overflow-hidden rounded-2xl border bg-gray-50">
+    <div class="border-gary-200 my-6 overflow-hidden rounded-md shadow-sm border bg-gray-50">
       <ClientOnly>
         <LMap style="height: 250px" :zoom="1" :center="[38, -1]" :use-global-leaflet="false">
           <LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -69,7 +68,7 @@
         <div class="flex w-full max-w-[140px] items-center gap-3">
           <div class="relative block h-2 w-full max-w-[100px] rounded-sm bg-gray-200">
             <div
-              class="absolute left-0 top-0 flex h-full w-[79%] items-center justify-center rounded-sm bg-brand-500 text-xs font-medium text-white">
+              class="absolute left-0 top-0 flex h-full w-[77%] items-center justify-center rounded-sm bg-brand-500 text-xs font-medium text-white">
             </div>
           </div>
           <p class="text-theme-sm font-medium text-gray-800">
@@ -96,7 +95,7 @@
         <div class="flex w-full max-w-[140px] items-center gap-3">
           <div class="relative block h-2 w-full max-w-[100px] rounded-sm bg-gray-200">
             <div
-              class="absolute left-0 top-0 flex h-full w-[23%] items-center justify-center rounded-sm bg-brand-500 text-xs font-medium text-white">
+              class="absolute left-0 top-0 flex h-full w-[13%] items-center justify-center rounded-sm bg-brand-500 text-xs font-medium text-white">
             </div>
           </div>
           <p class="text-theme-sm font-medium text-gray-800">
@@ -123,7 +122,7 @@
         <div class="flex w-full max-w-[140px] items-center gap-3">
           <div class="relative block h-2 w-full max-w-[100px] rounded-sm bg-gray-200">
             <div
-              class="absolute left-0 top-0 flex h-full w-[23%] items-center justify-center rounded-sm bg-brand-500 text-xs font-medium text-white">
+              class="absolute left-0 top-0 flex h-full w-[10%] items-center justify-center rounded-sm bg-brand-500 text-xs font-medium text-white">
             </div>
           </div>
           <p class="text-theme-sm font-medium text-gray-800">
@@ -133,7 +132,6 @@
       </div>
     </div>
   </div>
-  <!-- ====== Map One End -->
 </template>
 
 <script setup lang="ts">

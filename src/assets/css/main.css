@@ -19,3 +19,7 @@
 ::-webkit-scrollbar-thumb:hover{
   background: #718096;
 }
+
+.bg-brand-500 {
+  background-color: #465fff;
+}

@@ -1,6 +1,6 @@
 <template>
   <!-- Metric Item Start -->
-  <div class="rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
+  <div class="rounded-md shadow-sm border border-gray-200 bg-white p-5 md:p-6">
     <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100">
       <svg class="fill-gray-800" width="24" height="24" viewBox="0 0 24 24" fill="none"
         xmlns="http://www.w3.org/2000/svg">

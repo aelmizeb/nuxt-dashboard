@@ -1,6 +1,5 @@
 <template>
-  <!-- ====== Table One Start -->
-  <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white px-4 pt-4 pb-3 sm:px-6">
+  <div class="overflow-hidden rounded-md shadow-sm border border-gray-200 bg-white px-4 pt-4 pb-3 sm:px-6">
     <div class="flex flex-col gap-2 mb-4 sm:flex-row sm:items-center sm:justify-between">
       <div>
         <h3 class="text-lg font-semibold text-gray-800">
@@ -70,9 +69,7 @@
             </th>
           </tr>
         </thead>
-        <!-- table header end -->
-
-        <!-- table body start -->
+        
         <tbody class="py-3 divide-y divide-gray-100">
           <tr>
             <td class="px-6 py-3 whitespace-nowrap first:pl-0">
@@ -275,10 +272,7 @@
             </td>
           </tr>
         </tbody>
-
-        <!-- table body end -->
       </table>
     </div>
   </div>
-  <!-- ====== Table One End -->
 </template>
