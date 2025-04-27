@@ -38,7 +38,7 @@ const chartOpts = computed(() => ({
 }))
 
 async function fetchData(symbol: string) {
-  const baseUrl = process.env.BASE_URL || window.location.origin
+  const baseUrl = process.env.NUXT_APP_BASE_URL || window.location.origin
   const filePath = `${baseUrl}/data/${symbol}.json`
 
   try {
