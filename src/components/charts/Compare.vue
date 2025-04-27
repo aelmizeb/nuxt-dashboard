@@ -38,12 +38,25 @@ const chartOpts = computed(() => ({
 }))
 
 async function fetchData(symbol: string) {
-  const res = await fetch(`/data/${symbol}.json`)
-  const data = await res.json()
-  series.value.push({
-    name: symbol,
-    data
-  })
+  const baseUrl = process.env.BASE_URL || window.location.origin
+  const filePath = `${baseUrl}/data/${symbol}.json`
+
+  try {
+    const res = await fetch(filePath)
+    
+    if (!res.ok) {
+      throw new Error(`Failed to fetch data from ${filePath}`)
+    }
+
+    const data = await res.json()
+    
+    series.value.push({
+      name: symbol,
+      data
+    })
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 onMounted(() => {
