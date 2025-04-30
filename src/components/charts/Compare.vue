@@ -1,66 +1,76 @@
 <template>
-  <highstock :options="chartOpts" />
+  <VChart :option="options" style="height: 400px;" />
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { use } from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { LineChart } from 'echarts/charts'
+import { TooltipComponent, TitleComponent } from 'echarts/components'
+import VChart from 'vue-echarts'
 
-const series = ref<any[]>([])
+use([CanvasRenderer, LineChart, TooltipComponent, TitleComponent])
 
-const chartOpts = computed(() => ({
-  rangeSelector: {
-    selected: 4
-  },
-  yAxis: {
-    labels: {
-      formatter() {
-        return (this.value > 0 ? ' + ' : '') + this.value + '%'
-      }
-    },
-    plotLines: [{
-      value: 0,
-      width: 2,
-      color: 'silver'
-    }]
-  },
-  plotOptions: {
-    series: {
-      compare: 'percent',
-      showInNavigator: true
-    }
+const options = {
+  title: {
+    text: 'Stacked Line'
   },
   tooltip: {
-    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
-    valueDecimals: 2,
-    split: true
+    trigger: 'axis'
   },
-  series: series.value
-}))
-
-async function fetchData(symbol: string) {
-  const baseUrl = process.env.NUXT_APP_BASE_URL || window.location.origin
-  const filePath = `${baseUrl}/data/${symbol}.json`
-
-  try {
-    const res = await fetch(filePath)
-    
-    if (!res.ok) {
-      throw new Error(`Failed to fetch data from ${filePath}`)
+  legend: {
+    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
     }
-
-    const data = await res.json()
-    
-    series.value.push({
-      name: symbol,
-      data
-    })
-  } catch (error) {
-    console.error(error)
-  }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      name: 'Email',
+      type: 'line',
+      stack: 'Total',
+      data: [120, 132, 101, 134, 90, 230, 210]
+    },
+    {
+      name: 'Union Ads',
+      type: 'line',
+      stack: 'Total',
+      data: [220, 182, 191, 234, 290, 330, 310]
+    },
+    {
+      name: 'Video Ads',
+      type: 'line',
+      stack: 'Total',
+      data: [150, 232, 201, 154, 190, 330, 410]
+    },
+    {
+      name: 'Direct',
+      type: 'line',
+      stack: 'Total',
+      data: [320, 332, 301, 334, 390, 330, 320]
+    },
+    {
+      name: 'Search Engine',
+      type: 'line',
+      stack: 'Total',
+      data: [820, 932, 901, 934, 1290, 1330, 1320]
+    }
+  ]
 }
-
-onMounted(() => {
-  const symbols = ['test-1', 'test-2']
-  symbols.forEach(symbol => fetchData(symbol))
-})
 </script>

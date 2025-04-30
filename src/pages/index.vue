@@ -120,7 +120,4 @@ import MonthlySales from "~/components/dashboard/MonthlySales.vue";
 import CustomersMetric from "~/components/dashboard/metrics/Customers.vue";
 import OrdersMetric from "~/components/dashboard/metrics/Orders.vue";
 
-
-const openDropDown = ref(true);
-
 </script>

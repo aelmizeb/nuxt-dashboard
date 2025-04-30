@@ -4,8 +4,8 @@ A **Nuxt 3** dashboard template styled with **Tailwind CSS** and developed with 
 
 ## 🚀 Features
 - Multiple pages
-- Collapsible sidebar
-- Powered by [Nuxt 3](https://nuxt.com/) + [Tailwind CSS](https://tailwindcss.com/)
+- Built with [Nuxt 3](https://nuxt.com/), [Tailwind CSS](https://tailwindcss.com/), [Leaflet](https://leafletjs.com/), and [ECharts](https://echarts.apache.org/)
+
 
 ## 🔎 Preview
 

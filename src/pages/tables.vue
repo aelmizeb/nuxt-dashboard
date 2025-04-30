@@ -35,7 +35,7 @@
                   <td class="px-6 py-4 border-b border-gray-200 whitespace-nowrap">
                     <div class="flex items-center">
                       <div class="flex-shrink-0 w-10 h-10">
-                        <img class="w-10 h-10 rounded-full" :src="`/img/users/${u.picture}`" alt="" />
+                        <img class="w-10 h-10 rounded-full" :src="`/img/users/${u.picture}`" :alt="u.name" />
                       </div>
 
                       <div class="ml-4">
@@ -86,4 +86,7 @@
 import { useData } from "~/composable/useData";
 
 const { usersList } = useData();
+
+const config = useRuntimeConfig();
+const mediaUrl = config.public.mediaBase;
 </script>

@@ -1,109 +1,36 @@
 <template>
-  <highchart :options="chartOptions" :modules="['exporting']" :update="watchers" style="width: 100%;" />
+  <VChart :option="options" style="height: 400px;" />
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { use } from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { LineChart } from 'echarts/charts'
+import {
+  TooltipComponent,
+  TitleComponent,
+  GridComponent // 👈 REQUIRED FOR xAxis/yAxis TO WORK
+} from 'echarts/components'
+import VChart from 'vue-echarts'
 
-// Refs (reactive variables)
-const caption = ref('Chart caption')
-const title = ref('Basic Chart')
-const subtitle = ref('Basic chart details')
-const points = ref([10, 3, 8, 3, 6, 4, 5, 7, 16, 7, 15, 14])
-const seriesColor = ref('')
-const chartType = ref('')
-const seriesName = ref('My Data')
-const yAxisLabel = ref('My Values')
-const sexy = ref(false)
-const lastPointClicked = ref({
-  timestamp: '',
-  x: '',
-  y: ''
-})
+use([CanvasRenderer, LineChart, TooltipComponent, TitleComponent, GridComponent]) // 👈 include GridComponent
 
-const watchers = [
-  'options.title',
-  'options.series'
-]
-
-const colors = [
-  'Red', 'Green', 'Blue', 'Pink', 'Orange', 'Brown', 'Black', 'Purple'
-]
-
-// Fake function for inverted color, to match your old code (define it properly)
-function invertedColor(index: number) {
-  return '#FFFFFF' // Change this based on your logic
+const options = {
+  tooltip: {
+    trigger: 'axis'
+  },
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 190, 180, 260],
+      type: 'line'
+    }
+  ]
 }
-
-// Computed chart options
-const chartOptions = computed(() => ({
-  accessibility: { enabled: false },
-  caption: {
-    text: caption.value,
-    style: {
-      color: sexy.value ? invertedColor(0) : '#000000'
-    }
-  },
-  chart: {
-    backgroundColor: sexy.value
-      ? {
-          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
-          stops: [
-            [0, seriesColor.value],
-            [0.5, '#ffffff'],
-            [1, seriesColor.value]
-          ]
-        }
-      : '#ffffff',
-    className: 'my-chart',
-    type: chartType.value.toLowerCase()
-  },
-  plotOptions: {
-    series: {
-      cursor: 'pointer',
-      point: {
-        events: {
-          click() {
-            // You can emit a global event if needed with `useNuxtApp()`
-            console.log('Point clicked:', this)
-          }
-        }
-      }
-    }
-  },
-  yAxis: [{
-    title: {
-      text: yAxisLabel.value,
-      style: {
-        color: '#000000'
-      }
-    }
-  }],
-  title: {
-    style: {
-      color: sexy.value ? invertedColor(0) : '#000000'
-    },
-    text: `${title.value}` +
-      (lastPointClicked.value.timestamp
-        ? ` (Point clicked: ${lastPointClicked.value.timestamp})`
-        : '')
-  },
-  subtitle: {
-    style: {
-      color: sexy.value ? invertedColor(0) : '#000000'
-    },
-    text: subtitle.value
-  },
-  legend: {
-    itemStyle: {
-      color: sexy.value ? invertedColor(0) : '#000000'
-    }
-  },
-  series: [{
-    type: 'line',
-    name: seriesName.value,
-    data: [...points.value],
-    color: seriesColor.value
-  }]
-}))
 </script>

@@ -1,26 +1,49 @@
 <template>
-  <highchart :options="pieChartOptions" />
+  <VChart :option="options" style="height: 400px;" />
 </template>
 
 <script setup lang="ts">
-// Pie chart options
-const pieChartOptions = {
-  chart: {
-    type: 'pie'
-  },
+import { use } from 'echarts/core'
+import { CanvasRenderer } from 'echarts/renderers'
+import { PieChart } from 'echarts/charts'
+import { TooltipComponent, TitleComponent } from 'echarts/components'
+import VChart from 'vue-echarts'
+
+use([CanvasRenderer, PieChart, TooltipComponent, TitleComponent])
+
+const options = {
   title: {
-    text: 'Pie Chart Example'
+    text: 'Referer of a Website',
+    subtext: 'Fake Data',
+    left: 'center'
   },
-  subtitle: {
-    text: 'A simple pie chart example with Highcharts'
+  tooltip: {
+    trigger: 'item'
   },
-  series: [{
-    name: 'Brands',
-    data: [
-      { name: 'Apple', y: 50 },
-      { name: 'Samsung', y: 30 },
-      { name: 'Huawei', y: 20 }
-    ]
-  }]
+  legend: {
+    orient: 'vertical',
+    left: 'left'
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: '50%',
+      data: [
+        { value: 1048, name: 'Search Engine' },
+        { value: 735, name: 'Direct' },
+        { value: 580, name: 'Email' },
+        { value: 484, name: 'Union Ads' },
+        { value: 300, name: 'Video Ads' }
+      ],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }
+  ]
 }
 </script>
