@@ -6,8 +6,8 @@ A **Nuxt 3** dashboard template styled with **Tailwind CSS** and developed with 
 - Multiple pages
 - Built with [Nuxt 3](https://nuxt.com/), [Tailwind CSS](https://tailwindcss.com/), [Leaflet](https://leafletjs.com/), and [ECharts](https://echarts.apache.org/)
 
-
 ## 🔎 Preview
+![Preview](./src/assets/img/preview.png)
 
 🚀 **[Live Demo](https://aelmizeb.github.io/nuxt-dashboard/)**
 
