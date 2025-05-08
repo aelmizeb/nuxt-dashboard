@@ -1,4 +1,8 @@
 # Nuxt Dashboard Template with Tailwind
+![WIP](https://img.shields.io/badge/status-WIP-orange?style=flat-square)
+
+> ⚠️ **WORK IN PROGRESS**  
+> This template is currently under active development.
 
 A **Nuxt 3** dashboard template styled with **Tailwind CSS** and developed with **Yarn**.
 
