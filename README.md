@@ -4,7 +4,7 @@
 > ⚠️ **WORK IN PROGRESS**  
 > This template is currently under active development.
 
-A **Nuxt 3** dashboard template styled with **Tailwind CSS** and developed with **Yarn**.
+A **Nuxt 3** dashboard template styled with **Tailwind CSS** and developed with **Nuxt 3**.
 
 ## 🚀 Features
 - Multiple pages
