@@ -4,11 +4,11 @@
 > ⚠️ **WORK IN PROGRESS**  
 > This template is currently under active development.
 
-A **Nuxt 3** dashboard template styled with **Tailwind CSS** and developed with **Nuxt 3**.
+A **Nuxt 4** dashboard template styled with **Tailwind CSS** and developed with **Nuxt 4**.
 
 ## 🚀 Features
 - Multiple pages
-- Built with [Nuxt 3](https://nuxt.com/), [Tailwind CSS](https://tailwindcss.com/), [Leaflet](https://leafletjs.com/), and [ECharts](https://echarts.apache.org/)
+- Built with [Nuxt 4](https://nuxt.com/), [Tailwind CSS](https://tailwindcss.com/), [Leaflet](https://leafletjs.com/), and [ECharts](https://echarts.apache.org/)
 
 ## 🔎 Preview
 ![Preview](./src/assets/img/preview.png)

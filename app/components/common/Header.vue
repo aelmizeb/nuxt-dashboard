@@ -35,7 +35,7 @@
       <div class="relative">
         <button @click="dropdownOpen = !dropdownOpen"
           class="relative z-10 block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
-          <img class="object-cover w-full h-full" src="/img/users/user-1.avif" alt="User Name" />
+          <img class="object-cover w-full h-full" src="@/assets/img/users/user-1.avif" alt="User Name" />
         </button>
 
         <div v-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 z-10 w-full h-full"></div>
